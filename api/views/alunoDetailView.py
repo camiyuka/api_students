@@ -20,14 +20,20 @@ class AlunoDetailView(APIView):
 
     # atualizar |  permite a atualização dos detalhes de um aluno específico com base no id                            
     def put(self, request, pk):
-      #  try:
-        alunos=AlunoModel.objects.get(pk=pk)
-        serializer = AlunoSerializer(alunos, data= request.data, partial=True)
-        if(serializer.is_valid()):
-            serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
-      #  except:
-           #    return Response(status=status.HTTP_400_BAD_REQUEST)
+        try:
+            alunos=AlunoModel.objects.get(pk=pk)
+            serializer = AlunoSerializer(alunos, data= request.data, partial=True)
+            if(serializer.is_valid()):
+                serializer.save()
+                return Response({
+                "message": "aluno atualizado com sucesso!",
+                "data": serializer.data
+            }, status=status.HTTP_201_CREATED)
+        except Exception as e:
+            return Response({
+            "error": "Erro ao atualizar aluno",
+            "details": str(e)
+        }, status=status.HTTP_400_BAD_REQUEST)
 
     # excluir | Permite a exclusão de um aluno específico com base no id. Além disso, todas as tarefas associadas a esse aluno devem ser excluídas ou desassociadas.      
 
