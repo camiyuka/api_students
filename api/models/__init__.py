@@ -1,1 +1,1 @@
-from alunoModel import AlunoModel
+from api.models.alunoModel import AlunoModel

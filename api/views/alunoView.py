@@ -3,8 +3,8 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-from models.alunoModel import AlunoModel  
-from serializers.alunoSerializer import AlunoSerializer 
+from api.models.alunoModel import AlunoModel  
+from api.serializers.alunoSerializer import AlunoSerializer 
 
 class AlunoView(APIView):
       
