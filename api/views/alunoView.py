@@ -10,7 +10,7 @@ class AlunoView(APIView):
       
      # Listar | Retorna a lista de todos os alunos
     def get(self, request):
-        alunos = AlunoModel.objects.all()
+        alunos = AlunoModel.objects.all() #aqui define todos os alunos
         serializer = AlunoSerializer(alunos, many=True)
         return Response(serializer.data)
         
