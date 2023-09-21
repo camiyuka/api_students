@@ -9,7 +9,7 @@ from api.serializers.alunoSerializer import AlunoSerializer
 class AlunoDetailView(APIView):
 
     # detalhar| Retorna detalhes de um aluno específico com base no id
-    def get_detalhes(self, id):
+    def get(self, id):
         try:
             alunos = AlunoModel.objects.get(pk=id)
             serializer= AlunoSerializer(alunos)
