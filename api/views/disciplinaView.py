@@ -20,12 +20,4 @@ class DisciplinaView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-    def get_detail(self, request,pk):
-        try:
-            disciplina = DisciplinaModel.objects.get(pk=pk)
-            serializer= DisciplinaSerializer(disciplina)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        except DisciplinaModel.DoesNotExist:
-            return Response("disciplina não encontrada", status=status.HTTP_404_NOT_FOUND)
-        except Exception as error:
-            return Response(str(error), status=status.HTTP_400_BAD_REQUEST)
+   
