@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from api.models.alunoModel import AlunoModel  
-from serializers.alunoSerializer import AlunoSerializer 
+from api.serializers.alunoSerializer import AlunoSerializer 
 
 class AlunoDetailView(APIView):
 
