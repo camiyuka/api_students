@@ -2,20 +2,20 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from api.models.alunoModel import AlunoModel  
-from api.serializers.alunoSerializer import AlunoSerializer 
+from api.models.tarefaModel import TarefaModel  
+from api.serializers.tarefaSerializer import TarefaSerializer 
 
-class AlunoView(APIView):
+class TarefaView(APIView):
       
-     # Listar | Retorna a lista de todos os alunos
+     # Listar | Retorna a lista de todas as tarefas
     def get(self, request):
-        alunos = AlunoModel.objects.all() #aqui define todos os alunos
-        serializer = AlunoSerializer(alunos, many=True)
+        tarefa = TarefaModel.objects.all() 
+        serializer = TarefaSerializer(tarefa, many=True)
         return Response(serializer.data)
         
-    # Criar | Permite a criação de um novo aluno.
+    # Criar | Permite a criação de uma tarefaa nova
     def post(self, request):
-        serializer = AlunoSerializer(data=request.data)
+        serializer = TarefaSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)

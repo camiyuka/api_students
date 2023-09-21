@@ -26,8 +26,8 @@ class DisciplinaDetailView(APIView):
     
     def delete(self, request, pk):
         try:
-            alunos = DisciplinaModel.objects.get(pk=pk)
-            alunos.delete()
+            disciplina = DisciplinaModel.objects.get(pk=pk)
+            disciplina.delete()
             return Response( "disciplina deletada com sucesso!",status= status.HTTP_204_NO_CONTENT)
         except DisciplinaModel.DoesNotExist:
-            return Response("disciplina não encontrada", status=status.HTTP_404_NOT_FOUND)
+                return Response("disciplina não encontrada", status=status.HTTP_404_NOT_FOUND)

@@ -9,4 +9,4 @@ class TarefaModel(models.Model):
     concluida = models.BooleanField(default=False)
     
     aluno = models.ForeignKey(AlunoModel, on_delete=models.CASCADE)
-    disciplinas = models.ManyToManyField(DisciplinaModel)
+    disciplinas = models.ManyToManyField(DisciplinaModel)   
