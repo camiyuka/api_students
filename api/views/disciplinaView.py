@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
+# importando modelo e serializer específicos:
 from api.models.disciplinaModel import DisciplinaModel
 from api.serializers.disciplinaSerializer import DisciplinaSerializer
 
