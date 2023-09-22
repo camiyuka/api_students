@@ -160,7 +160,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Todas as funções em relação a URL dos alunos:\n\nGET: lista todos os alunos cadastrados e seus atributos\n\nPOST: adiciona um aluno novo\n\nGET por ID: puxa apenas um aluno, de acordo com seu ID, junto com seus atributos\n\nPUT: atualiza aluno pelo ID\n\nDELETE: deleta um aluno pelo ID"
 		},
 		{
 			"name": "disciplinas",
@@ -316,25 +317,17 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Todas as funções em relação a URL das disciplinas:\n\nGET: lista todas as disciplinas cadastradas com seus atributos\n\nPOST: adiciona uma disciplina nova\n\nGET por ID: puxa apenas uma disciplina e seus atributos\n\nPUT: atualiza disciplina pelo ID\n\nDELETE: deleta uma disciplina pelo ID"
 		},
 		{
 			"name": "tarefas",
 			"item": [
 				{
-					"name": "POST- add tarefa",
+					"name": "GET todas as tarefas",
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\"titulo\": \"Lista de Tarefas em Django\",\r\n\"descricao\":\"criar uma API em Django para fazer uma lista de tarefas\",\r\n\"data_entrega\":\"2023-09-10\",\r\n\"aluno\":5,\r\n\"disciplinas\":[4,1]\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "http://127.0.0.1:8000/api/tarefa/",
 							"protocol": "http",
@@ -355,10 +348,19 @@
 					"response": []
 				},
 				{
-					"name": "GET todas as tarefas",
+					"name": "POST- add tarefa",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"titulo\": \"Lista de Tarefas em Django\",\r\n\"descricao\":\"criar uma API em Django para fazer uma lista de tarefas\",\r\n\"data_entrega\":\"2023-09-10\",\r\n\"aluno\":5,\r\n\"disciplinas\":[4,1]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://127.0.0.1:8000/api/tarefa/",
 							"protocol": "http",
@@ -444,8 +446,17 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GET por ID aluno-tarefa",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
-			]
+			],
+			"description": "Todas as funções em relação a URL das tarefas:\n\nGET: lista todas as tarefas cadastradas com seus atributos\n\nPOST: adiciona uma tarefa nova\n\nGET por ID de tarefa: puxa apenas uma tarefa e seus atributos\n\nPUT: atualiza tarefa pelo ID\n\nDELETE: deleta uma tarefa pelo ID\n\nGET por ID de aluno: puxa o aluno e as tarefas associadas a ele"
 		}
 	]
 }

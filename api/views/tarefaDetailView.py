@@ -31,3 +31,5 @@ class TarefaDetailView(APIView):
             return Response( "tarefa deletada com sucesso!",status= status.HTTP_204_NO_CONTENT)
         except TarefaModel.DoesNotExist:
                 return Response("tarefa não encontrada", status=status.HTTP_404_NOT_FOUND)
+        
+    

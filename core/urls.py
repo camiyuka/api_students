@@ -4,6 +4,7 @@ from api.views.disciplinaView import DisciplinaView
 from api.views.disciplinaDetailView import DisciplinaDetailView
 from api.views.tarefaView import TarefaView
 from api.views.tarefaDetailView import TarefaDetailView
+from api.views.tarefaPorAlunoView import TarefaPorAlunoView
 
 from django.contrib import admin
 from django.urls import path
@@ -15,5 +16,6 @@ urlpatterns = [
     path('api/disciplina/', DisciplinaView.as_view()),
     path('api/disciplina/<pk>/', DisciplinaDetailView.as_view()),
     path('api/tarefa/', TarefaView.as_view()),
-    path('api/tarefa/<pk>/', TarefaDetailView.as_view())
+    path('api/tarefa/<pk>/', TarefaDetailView.as_view()),
+    path('api/alunos/<aluno>/tarefas/', TarefaPorAlunoView.as_view())
 ]
