@@ -26,5 +26,5 @@ class AlunoView(APIView):
                 serializer.save()
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
         except:
-            return Response("erro ao cadastrar aluno", status=status.HTTP_417_EXPECTATION_FAILED)
+            return Response("erro ao cadastrar aluno", status=status.HTTP_404_NOT_FOUND)
 

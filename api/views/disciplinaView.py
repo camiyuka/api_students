@@ -7,9 +7,10 @@ from api.models.disciplinaModel import DisciplinaModel
 from api.serializers.disciplinaSerializer import DisciplinaSerializer
 
 class DisciplinaView(APIView):
-    # Listagem de Disciplinas
+    # listagem de todas as disciplinas
     def get(self, request):
         disciplina = DisciplinaModel.objects.all()
+        #pega vários objetos 
         serializer = DisciplinaSerializer(disciplina, many=True)  
         return Response(serializer.data)
 

@@ -16,6 +16,6 @@ class TarefaPorAlunoView(APIView):
                 serializer= TarefaSerializer(tarefa, many=True)
                 # retorna os dados serializados em JSON 
                 return Response(serializer.data)
-            #tratamento de exceção com mensagem de erro
+            #tratamento de exceção com mensagem de erro 
             except Exception as e:
                 return Response ({'erro': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
