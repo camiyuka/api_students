@@ -1,15 +1,15 @@
-# api_students  
+# Gerenciador de Estudos: API de Gestão de Alunos, Disciplinas e Tarefas
 
-## O que é o projeto:
+### O que é o projeto:
 esse projeto é uma API em Django para ajudar alunos a gerenciarem suas disciplinas e
 tarefas. Ela contêm todas as solicitações HTTP: GET, POST, PUT e DELETE, ou seja, é possível listar, adicionar, atualizar e deletar alunos, disciplinas e tarefas. 
 
-## Requisitos:
+### Requisitos:
 -  Python 3.x
 - Django 3.x
 - Django REST Framework 
 
-## Instalação
+### Instalação
 
 Clone esse repositório:
 
@@ -34,7 +34,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-## Explicação dos Endpoints:
+### Explicação dos Endpoints:
 GET e POST alunos:
 ```bash
     api/alunos/ 
